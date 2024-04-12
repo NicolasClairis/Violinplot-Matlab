@@ -267,25 +267,25 @@ classdef Violin < handle
                     case 'right'
                         obj.ViolinPlot =  ... % plot color will be overwritten later
                             fill([pos+density*width halfViol*pos], ...
-                            [value value(end:-1:1)], [1 1 1]);
+                            [value value(end:-1:1)], [1 1 1],'LineStyle','-');
                     case 'left'
                         obj.ViolinPlot =  ... % plot color will be overwritten later
                             fill([halfViol*pos pos-density(end:-1:1)*width], ...
-                            [value value(end:-1:1)], [1 1 1]);
+                            [value value(end:-1:1)], [1 1 1],'LineStyle','-');
                     case 'full'
                         obj.ViolinPlot =  ... % plot color will be overwritten later
                             fill([pos+density*width pos-density(end:-1:1)*width], ...
-                            [value value(end:-1:1)], [1 1 1]);
+                            [value value(end:-1:1)], [1 1 1],'LineStyle','-');
                 end
             else
                 % plot right half of the violin
                 obj.ViolinPlot =  ...
                     fill([pos+density*width pos-density(1)*width], ...
-                    [value value(1)], [1 1 1]);
+                    [value value(1)], [1 1 1],'LineStyle','-');
                 % plot left half of the violin
                 obj.ViolinPlot2 =  ...
                     fill([pos-densityC(end)*widthC pos-densityC(end:-1:1)*widthC], ...
-                    [valueC(end) valueC(end:-1:1)], [1 1 1]);
+                    [valueC(end) valueC(end:-1:1)], [1 1 1],'LineStyle','-');
             end
                 
             %% Plot the quartiles within the violin
